@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { Suspense, memo } from 'react'
+import type { FC, ReactNode } from 'react'
+import { Link, Outlet } from 'react-router-dom'
 
-const Discover = () => {
-  return <div>discover</div>
+interface IProps {
+  children?: ReactNode
 }
 
-export default Discover
+const Discover: FC<IProps> = () => {
+  return (
+    <div>
+      <Link to="/discover/recommand">推荐</Link>
+      <Link to="/discover/ranking">排行榜</Link>
+      <Link to="/discover/songs">歌单</Link>
+      <Link to="/discover/djRadio">主播电台</Link>
+      <Link to="/discover/album">新碟上架</Link>
+      <Suspense fallback="">
+        <Outlet />
+      </Suspense>
+    </div>
+  )
+}
+
+export default memo(Discover)
