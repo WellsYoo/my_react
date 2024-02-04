@@ -2,7 +2,7 @@ import React, { lazy } from 'react'
 import { Navigate, RouteObject } from 'react-router-dom'
 
 const Discover = lazy(() => import('@/views/discover'))
-const Recommand = lazy(() => import('@/views/discover/c-views/recommand'))
+const Recommend = lazy(() => import('@/views/discover/c-views/recommend'))
 const Ranking = lazy(() => import('@/views/discover/c-views/ranking'))
 const Album = lazy(() => import('@/views/discover/c-views/album'))
 const Artist = lazy(() => import('@/views/discover/c-views/artist'))
@@ -24,11 +24,11 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/discover',
-        element: <Navigate to="/discover/recommand" />
+        element: <Navigate to="/discover/recommend" />
       },
       {
-        path: '/discover/recommand',
-        element: <Recommand />
+        path: '/discover/recommend',
+        element: <Recommend />
       },
       {
         path: '/discover/ranking',
