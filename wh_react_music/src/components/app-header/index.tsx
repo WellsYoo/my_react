@@ -1,11 +1,11 @@
 import React, { memo } from 'react'
 import type { FC, ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
+import { Input } from 'antd'
+import { SearchOutlined } from '@ant-design/icons'
 import { HeaderLeft, HeaderRight, HeaderWrapper } from './style'
 
 import headerTitles from '@/assets/data/header_titles.json'
-import { Input } from 'antd'
-import { SearchOutlined } from '@ant-design/icons'
 
 interface IProps {
   children?: ReactNode
@@ -17,25 +17,25 @@ const AppHeader: FC<IProps> = () => {
 
   /** 组件的展示逻辑 */
   function showItem(item: any) {
-    if (item.type === 'path') {
-      return (
-        <NavLink
-          to={item.link}
-          className={({ isActive }) => {
-            return isActive ? 'active' : undefined
-          }}
-        >
-          {item.title}
-          <i className="icon sprite_01"></i>
-        </NavLink>
-      )
-    } else {
-      return (
-        <a href={item.link} rel="noreferrer" target="_blank">
-          {item.title}
-        </a>
-      )
-    }
+    // if (item.type === 'path') {
+    return (
+      <NavLink
+        to={item.link}
+        className={({ isActive }) => {
+          return isActive ? 'active' : undefined
+        }}
+      >
+        {item.title}
+        <i className="icon sprite_01"></i>
+      </NavLink>
+    )
+    // } else {
+    //   return (
+    //     <a href={item.link} rel="noreferrer" target="_blank">
+    //       {item.title}
+    //     </a>
+    //   )
+    // }
   }
 
   return (
@@ -55,7 +55,7 @@ const AppHeader: FC<IProps> = () => {
             })}
           </div>
         </HeaderLeft>
-        <HeaderRight>
+        {/* <HeaderRight>
           <Input
             className="search"
             placeholder="音乐/视频/电台/用户"
@@ -63,7 +63,7 @@ const AppHeader: FC<IProps> = () => {
           />
           <span className="center">创作者中心</span>
           <span className="login">登录</span>
-        </HeaderRight>
+        </HeaderRight> */}
       </div>
       <div className="divider"></div>
     </HeaderWrapper>
