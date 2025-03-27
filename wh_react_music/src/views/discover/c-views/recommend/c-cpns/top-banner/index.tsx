@@ -54,7 +54,7 @@ const TopBanner: FC<IProps> = () => {
           <Carousel
             autoplay
             dots={false}
-            autoplaySpeed={1000}
+            autoplaySpeed={10000}
             effect="fade"
             ref={bannerRef}
             beforeChange={handleBeforeChange}

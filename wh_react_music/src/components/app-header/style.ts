@@ -35,14 +35,14 @@ export const HeaderLeft = styled.div`
       position: relative;
 
       a {
-        display: block;
+        display: inline-block;
         padding: 0 20px;
         color: #ccc;
       }
 
-      :last-of-type a {
+      &:last-of-type a {
         position: relative;
-        ::after {
+        &::after {
           position: absolute;
           content: '';
           width: 28px;
